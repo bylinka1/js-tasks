@@ -1,7 +1,7 @@
-var multiple = function (numberFirst, numberSecond) {
+function multiple(numberFirst, numberSecond) {
     return numberFirst * numberSecond;
 };
-var add = function (mult, numberThree) {
+function add(mult, numberThree) {
     return mult + numberThree;
 };
 var mult = multiple(36325, 9824);
