@@ -1,44 +1,49 @@
-var pickRandomWord = function (words) {
+var words = [
+            "javascript",
+            "cake",
+            "juice",
+            "jupiter",
+            "bullshit",
+            "sandwich",
+            "butterfly",
+            "sausages"
+        ];
+var pickRandomWord = function(words) {
     return words[Math.floor(Math.random() * words.length)];
-}
-var setupAnswerArray = function (word) {
-var answerArray = [];
-    for (var i = 0; i < word.length; i++) {
-        answerArray[i] = "_";
-        }
-    return answerArray;
 };
+var word = pickRandomWord(words);
+var answerArray = [];
+        for (var i = 0; i < word.length; i++) {
+            answerArray[i] = "_";
+        }
 var guesses = 10;
-var remainingLetters = pickRandomWord.length;
+var remainingLetters = word.length;
 while (remainingLetters > 0 && guesses > 0 ) {
-    function showPlayerProgress(answerArray) {
+    var showPlayerProgress = function (answerArray) {
         alert(answerArray.join(" "));
-        return answerArray;
     };
-    function getGuess() {
-        return prompt("Guess the letter, or click Cancel stop playing!");
+    showPlayerProgress(answerArray);
+    var guess = function() {
+        var guess = prompt("Guess the letter, or click Cancel stop playing!");
     };
-    if (guess === null) {
-        break;
-    } else if (guess.length !== 1) {
-        alert("Please enter a single letter.");
-    } else {
-        guesses--;
-    }      
     var updateGameState = function (guess, word, answerArray) {
-        for (var j = 0; j < pickRandomWord.length; j++) {
-                    if (word[j] === guessNew && answerArray[j] === "_") {
-                        answerArray[j] = guessNew;
+        if (guess === null) {
+            return;
+        }
+        if (guessNew.length !== 1) {
+            return alert("Please enter a single letter!");
+        } 
+        return guesses--;
+        for (var j = 0; j < word.length; j++) {
+                    if (word[j] === guess && answerArray[j] === "_") {
+                        return answerArray[j] = guess;
                         remainingLetters--;
                     }
         }
-    return remainingLetters;
-}
-function showAnswerAndCongratulatePlayer(answerArray) {
-    alert(answerArray.join(" "));
-        if (guesses > 0) {
-           alert("Good job! The answer was " + word); 
-        }
-}
-            alert("Very bad! the answer was " + word);
+    };
+var showAnswerAndCongratulatePlayer = function (answerArray) {
+    if (guesses > 0) {
+        return alert("Good job! The answer was " + word); 
+    }
+    return alert("Very bad! the answer was " + word);
         };
