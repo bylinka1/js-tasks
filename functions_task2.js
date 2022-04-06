@@ -1,13 +1,14 @@
-function areArraysSame(arrayFirst, arraySecond) {
-    if (arrayFirst.length !== arraySecond.length) {
+function areArraysSame(a, b) {
+    if (a.length !== b.length) {
         return false;
     }
 
-    for (var i = 0; i < arrayFirst.length; i++) {
-        if (arrayFirst[i] !== arraySecond[i]) {
+    for (var i = 0; i < a.length; i++) {
+        if (a[i] !== b[i]) {
             return false;
         }
     }
-        return true;
+    return true;
     };
-    areArraysSame([1, 2, 3], [1, 2, 3]);
+    
+areArraysSame([1, 2, 3], [1, 2, 3]);
