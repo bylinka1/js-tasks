@@ -1,7 +1,7 @@
-function multiple(first, second) {
+function multiply(first, second) {
     return first * second;
 };
 function add(first, second) {
     return first + second;
 };
-add(multiple(36325, 9824), 777);
+add(multiply(36325, 9824), 777);
