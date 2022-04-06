@@ -9,6 +9,6 @@ function areArraysSame(a, b) {
         }
     }
     return true;
-    };
+};
     
 areArraysSame([1, 2, 3], [1, 2, 3]);
