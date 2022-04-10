@@ -2,35 +2,29 @@
 <html>
 <head>
     <title>Names</title>
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
 </head>
-
 <body>
     <h1 id="main-heading">Hello world!</h1>
-        
-    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
-        
+      
     <script>
         var newHeadingText = prompt("Please provide a new heading:");
         $("#main-heading").text(newHeadingText);
         
         var names = [
-        "Nadya",
-        "Kristina",
-        "Rita",
-        "Angeline",
-        "Poline"
+            "Nadya",
+            "Kristina",
+            "Rita",
+            "Angeline",
+            "Poline"
         ];
 
         for (var i = 0; i < names.length; i++) {
             $("body").append("<p>" + names[i] + "</p>");
         } 
-        $("body").fadeIn(3000);
-        
-        for (var x = 0; x < names.length; x ++) {
-            $("p").append("<p>" + names[x] + " " + "smells!" + "</p>");
-        }
 
+        $("p").hide().fadeIn(3000);
+        $("p").append(" smells!");
 </script>
-
 </body>
 </html>
