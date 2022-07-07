@@ -11,6 +11,7 @@
     src="http://nostarch.com/images/treasuremap.png">
 
     <p id="distance"></p>
+    <p id="clicks-remaining"></p>
 
     <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
 
@@ -26,7 +27,7 @@
         return Math.sqrt((diffX * diffX) + (diffY * diffY));
     };
 
-    var getDistanceHint = function (distance) {
+    var getDistanceHint = function (distance, clicks) {
         if (distance < 10) {
             return "Boiling hot!";
         } else if (distance < 20) {
@@ -45,6 +46,7 @@
     };
     
     var clicks = 0;
+    var clicksLimit = 25;
     var width = 400;
     var height = 400;
 
@@ -64,10 +66,13 @@
         if (distance < 8) {
         alert("Found the treasure in " + clicks + " clicks");
         }
-        if (clicks > 25) {
+        if (clicks > clicksLimit) {
         alert("GAME OVER");
+        return;
         }
+        $("#clicks-remaining").text(clicksLimit - clicks);
     });
    
+    
 
     </script>
